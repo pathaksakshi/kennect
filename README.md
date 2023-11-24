@@ -5,8 +5,8 @@ This project contains automated tests for a Pathology Lab Management system usin
 # Prerequisites
 
 - Clone the repository:
-  git clone https://github.com/pathaksakshi/kennect.git
-  cd kennect
+ >> git clone https://github.com/pathaksakshi/kennect.git
+ >> cd kennect
   
 - Java installed on your machine
 - Maven installed on your machine
