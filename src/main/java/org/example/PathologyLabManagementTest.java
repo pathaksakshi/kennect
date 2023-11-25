@@ -121,10 +121,20 @@ public class PathologyLabManagementTest {
         WebElement addButton = driver.findElement(By.xpath("//div[@class='jss170']//button[contains(@class, 'MuiIconButton-colorInherit')]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addButton);
 
+        Thread.sleep(5000);
+        //wait(1000);
+        Actions actions = new Actions(driver);
+        WebElement element = driver.findElement(By.xpath("//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft']/div[@class='MuiInputBase-root MuiInput-root MuiInput-underline']/div[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input']"));
+        actions.moveToElement(element).click().perform();
+      // driver.findElement(By.xpath("//td[@class='MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft']/div[@class='MuiInputBase-root MuiInput-root MuiInput-underline']/div[@class='MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input']")).click();
+        Thread.sleep(2000);
+       // driver.findElement(By.xpath("//li[normalize-space()='test equipment']")).click();
+        driver.findElement(By.xpath("//table//tbody//tr//td//button[@title='Save']")).click();
+
         Thread.sleep(3000);
-        WebElement check=driver.findElement(By.xpath("//button[contains(@class, 'MuiIconButton-root') and .//span[@class='material-icons MuiIcon-root' and text()='check']]"));
-        Thread.sleep(3000);
-        check.click();
+//        WebElement check=driver.findElement(By.xpath("//button[contains(@class, 'MuiIconButton-root') and .//span[@class='material-icons MuiIcon-root' and text()='check']]"));
+//        Thread.sleep(3000);
+//        check.click();
        // Thread.sleep(2000);
         WebElement addpatientbtn=driver.findElement(By.xpath("//span[contains(text(),'Add Patient')]"));
         addpatientbtn.click();
