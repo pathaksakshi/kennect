@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="SingleClassSuite">
+    <test name="SingleTestClass">
+        <classes>
+            <class name="org.example.PathologyLabManagementTest"/>
+        </classes>
+    </test>
+</suite>

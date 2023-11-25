@@ -138,6 +138,30 @@ public class PathologyLabManagementTest {
        // Thread.sleep(2000);
         WebElement addpatientbtn=driver.findElement(By.xpath("//span[contains(text(),'Add Patient')]"));
         addpatientbtn.click();
+        Thread.sleep(7000);
+        Assert.assertEquals("sakshi", driver.findElement(By.xpath("//table//tbody//tr[2]//td[2]")).getText());
+
+        try {
+            WebElement rowToHighlight = driver.findElement(By.xpath("//table//tbody//tr[2]"));
+            highlightTableRow(driver, rowToHighlight);
+        } catch (StaleElementReferenceException e) {
+            WebElement rowToHighlight = driver.findElement(By.xpath("//table//tbody//tr[2]"));
+            highlightTableRow(driver, rowToHighlight);
+        }
+
+    }
+
+    private static void highlightTableRow(WebDriver driver, WebElement row) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.backgroundColor='yellow';", row);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        js.executeScript("arguments[0].style.backgroundColor='';", row);
     }
 
     public static void loadingWait(WebDriver driver) {
